@@ -36,7 +36,4 @@ public class UserDaoImp implements UserDao {
       query.setParameter("series", series);
       return query.uniqueResult();
    }
-
-
-
 }

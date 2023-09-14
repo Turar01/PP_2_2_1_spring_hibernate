@@ -11,10 +11,8 @@ import java.util.List;
 
 public class MainApp {
 
-   public static void main(String[] args) throws SQLException {
-      AnnotationConfigApplicationContext context = 
-            new AnnotationConfigApplicationContext(AppConfig.class);
-
+   public static void main(String[] args) {
+      AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
       UserService userService = context.getBean(UserService.class);
 
       userService.add(new User("User1", "Lastname1", "user1@mail.ru", new Car("Toyota",123)));
@@ -36,7 +34,6 @@ public class MainApp {
       User user_ex = userService.getUserByCarModelAndSeries("KIA", 789);
 
       System.out.println("Firstname of user = " + user_ex.getFirstName());
-
       context.close();
    }
 }
